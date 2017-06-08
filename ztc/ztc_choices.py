@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 import subprocess, sys, time
-import asdf_rooms
+import ztc_rooms
 
 choice_list = {}
 choice_list['left'] = "goLeft"
@@ -14,16 +14,16 @@ choice_list['help'] = 'help'
 def move(direction, room_id):
     print("Moving " + direction)
     time.sleep(1)
-    asdf_rooms.room.room_list[room_id].move_room(direction)
+    ztc_rooms.room.room_list[room_id].move_room(direction)
 
 def use(room_id):
     print("performing use in room " + str(room_id))
     print("no effect")
     time.sleep(1)
-    asdf_rooms.room.room_list[room_id].load_room()
+    ztc_rooms.room.room_list[room_id].load_room()
 
 def help_text(room_id):
-    asdf_rooms.room.room_list[room_id].load_room()
+    ztc_rooms.room.room_list[room_id].load_room()
 
 def callMethod(method, room_id, *arguments):
 

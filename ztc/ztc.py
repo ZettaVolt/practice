@@ -6,9 +6,7 @@
 
 import sys, traceback
 #import optparse
-import asdf_choices, asdf_rooms
-
-
+import ztc_choices, ztc_rooms
 
 #main function
 def main(argv):
@@ -20,7 +18,7 @@ def main(argv):
     #     print("expected cmd line args: exiting")
     #     return 1
 
-    first_room = asdf_rooms.room.room_list[0]
+    first_room = ztc_rooms.room.room_list[0]
     first_room.load_room()
     
     #asdf_choices.choose(asdf_choices.choice_list[argv[1]])

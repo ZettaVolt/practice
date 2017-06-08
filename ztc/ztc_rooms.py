@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 import sys, os, subprocess
-import asdf_choices
+import ztc_choices
 
 class room:
 # a room contains a display (terminal), prompt for an action, and a list of valid actions that 
@@ -38,7 +38,7 @@ class room:
             if cmd[0] not in self.action_list:
                 prompt_text = "can't do that, try again: "
                 continue
-            asdf_choices.choose(action, self.room_id)
+            ztc_choices.choose(action, self.room_id)
             break
 
     def move_room(self, direction):
