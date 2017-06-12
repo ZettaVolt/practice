@@ -9,7 +9,7 @@ choice_list['up'] = "goUp"
 choice_list['down'] = "goDown"
 choice_list['right'] = "goRight"
 choice_list['use'] = "tryUse"
-choice_list['help'] = 'help'
+choice_list['look'] = 'look'
 
 def move(direction, room_id):
     print("Moving " + direction)
@@ -22,7 +22,7 @@ def use(room_id):
     time.sleep(1)
     ztc_rooms.room.room_list[room_id].load_room()
 
-def help_text(room_id):
+def look_text(room_id):
     ztc_rooms.room.room_list[room_id].load_room()
 
 def callMethod(method, room_id, *arguments):
@@ -31,8 +31,8 @@ def callMethod(method, room_id, *arguments):
         move(arguments[0], room_id)
     if method == "use":
         use(room_id)
-    if method == "help":
-        help_text(room_id)
+    if method == "look":
+        look_text(room_id)
 
 def choose(choice, room_id):
     function = ""
@@ -51,8 +51,8 @@ def choose(choice, room_id):
         direction = "down"
     if choice == "use":
         function = "use"
-    if choice == "help":
-        function = "help"
+    if choice == "look":
+        function = "look"
     
     if choice not in choice_list:
         tryagain = raw_input("invalid, try again")
@@ -60,5 +60,5 @@ def choose(choice, room_id):
 
     if function == "move":
         callMethod(function, room_id, direction)
-    elif function == "use" or function == "help":
+    elif function == "use" or function == "look":
         callMethod(function, room_id)

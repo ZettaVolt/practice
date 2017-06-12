@@ -58,7 +58,7 @@ def display_screen(display):
     subprocess.call('clear', shell=True)
     print(display)
 
-basecmds = ('use', 'help')
+basecmds = ('use', 'look')
 
 display = "This is screen one"
 prompt = "not much to see here... "
